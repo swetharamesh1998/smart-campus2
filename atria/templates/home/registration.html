@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+
+{% block content %}
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">ATRIA</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar brand">
+      <a class="navbar brand" href="/">HOME<span class="sr-only">(current)</span></a>
+    </div>
+  </div>
+</nav>
+<div class="jumbotron">
+  <form class="form-inline" action = "/home/registration2/" method = "POST">
+    <div class="form-group mx-sm-3 mb-2">
+      <label id="display">REGISTRATION ID</label>
+      <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">REGISTER</button>
+  </form>
+</div>
+<style >
+  body {
+    background-image: url("{% static 'home/college2.jpeg'%}");
+  }
+</style>
+
+
+{% endblock %}

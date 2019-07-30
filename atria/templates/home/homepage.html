@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="jumbotron">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">ATRIA</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar brand">
+      <a class="navbar brand" href="#">HOME<span class="sr-only">(current)</span></a>
+      <a class="navbar brand" href="home/login">LOGIN</a>
+      <a class="navbar brand" href="home/registration">REGISTRATION</a>
+      <a class="navbar brand" href="#">COLLEGE MAP</a>
+    </div>
+  </div>
+</nav>
+</div>
+<style>
+.mySlides {display:none;}
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+<h2 class="">campus photos</h2>
+
+<div class="jumbotron jumbotron-fluid" style="max-width:750px" >
+  <img class="mySlides" src="{% static 'home/college1.jpeg' %}" style="width:1100px" style="height:621px"  >
+  <img class="mySlides" src="{% static 'home/college2.jpeg' %}" style="width:1100px" style="height:621px"  >
+  <img class="mySlides" src="{% static 'home/college3.jpeg' %}" style="width:1100px" style="height:621px" >
+
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html>
+
+{% endblock %}
